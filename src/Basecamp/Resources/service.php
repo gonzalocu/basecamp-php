@@ -257,6 +257,35 @@ return array(
                 ),
             )
         ),
+        'createCommentByTodolist' => array(
+            'httpMethod' => 'POST',
+            'uri' => 'projects/{projectId}/todolists/{todolistId}/comments.json',
+            'summary'   => 'Create Comment on Todo List' . PHP_EOL . '[Basecamp API: Comments](https://github.com/basecamp/bcx-api/blob/master/sections/comments.md)',
+            'parameters' => array(
+                'projectId' => array(
+                    'location' => 'uri',
+                    'description' => 'Project id',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'todolistId' => array(
+                    'location' => 'uri',
+                    'description' => 'Todo list id',
+                    'type' => 'integer',
+                    'required' => true,
+                ),
+                'content' => array(
+                    'location' => 'json',
+                    'type' => 'string',
+                    'required' => true,
+                ),
+                'attachments' => array(
+                    'location' => 'json',
+                    'type' => 'array',
+                    'required' => false,
+                ),
+            )
+        ),
         'getAttachmentsByProject' => array(
             'httpMethod' => 'GET',
             'uri' => 'projects/{projectId}/attachments.json',
